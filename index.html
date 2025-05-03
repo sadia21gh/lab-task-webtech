@@ -35,12 +35,13 @@
         font-size: 15px;
         font-weight: bold;
       }
-      #box-1,
+      #box-1 {
+        flex: 3;
+        background-color: rgba(142, 86, 215, 0.807);
+      }
+    
       #box-2 {
         flex: 1;
-        background-color: rgb(64, 10, 118);
-      }
-      #box-2 {
         background-color: rgb(99, 70, 242);
       }
       #box-3 {
@@ -51,7 +52,7 @@
         flex: 1;
         background-color: rgb(108, 59, 213);
       }
-/* Style for consistent input fields */
+      /* Style for consistent input fields */
       form input[type="text"],
       form input[type="email"],
       form input[type="password"],
@@ -75,7 +76,7 @@
       }
       form label {
         font-size: 15px;
-      margin-bottom: 5px;
+        margin-bottom: 5px;
         display: block;
       }
     </style>
@@ -85,15 +86,66 @@
     <h1 style="text-align: center">Title</h1>
     <div class="container">
       <div class="column">
-        <div id="box-1" class="box">Box-1</div>
+        <div id="box-1" class="box">
+          <table border="1", style="width: 100%; text-align: center; border-collapse: collapse;">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>Weather </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bangladesh</td>
+                <td>30°c</td>
+              </tr>
+              <tr>
+                <td>UK</td>
+                <td>15°c</td>
+              </tr>
+              <tr>
+                <td>USA</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Canada</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Finland</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <div id="box-2" class="box">Box-2</div>
       </div>
       <div class="column">
         <div id="box-3" class="box">
-          <form action="">
+          <form action="submit.php" method="POST">
             <label>Full Name:</label>
-            <input type="text" placeholder="Full Name "><b>
-           <label>Email:</label>
+            <input type="text" placeholder="Full Name "fullName"><br>
+            <label>Email:</label>
             <input type="email" placeholder="Enter email" id="email"><br>
             <label>Password:</label>
             <input type="password" id="password1" placeholder="Enter Password"> <br>
@@ -121,5 +173,12 @@
       </div>
     </div>
     <script src="script.js"></script>
-  </body>
+    <script>
+      document.getElementById("checkBtn").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+        alert("Form submitted successfully!");
+        // Add your form validation or submission logic here
+      });
+    </script>
+  </body>
 </html>
