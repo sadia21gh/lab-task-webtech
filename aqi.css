@@ -1,0 +1,22 @@
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid black;
+    padding: 10px;
+  }
+  
+  .table th {
+    background-color: rgb(216, 220, 237);
+    font-weight: bold;
+  }
+  
+  .error-message {
+    color: rgb(190, 11, 11);
+    font-size: 12px;
+    margin-bottom: 10px;
+  }

@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Box Layout</title>
-    
+    <link rel="stylesheet" href="aqi.css" />
+
     <style>
       * {
-        margin: 1.5px;
-        padding: 1px;
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
       }
+
       body {
         display: flex;
         flex-direction: column;
@@ -18,167 +20,245 @@
         justify-content: center;
         align-items: center;
       }
+
       .container {
         display: flex;
         width: 50%;
-        height: 90vh;
+        height: 80vh;
       }
+
       .column {
         flex: 1;
         display: flex;
         flex-direction: column;
       }
+
       .box {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 15px;
+        font-size: 20px;
         font-weight: bold;
       }
+
       #box-1 {
         flex: 3;
-        background-color: rgba(142, 86, 215, 0.807);
+        background-color: rgb(136, 166, 214);
       }
-    
       #box-2 {
         flex: 1;
-        background-color: rgb(99, 70, 242);
+        background-color: rgb(71, 135, 195);
+        margin: 5px;
       }
+
       #box-3 {
         flex: 2;
-        background-color: rgb(158, 134, 231);
+        background-color: skyblue;
+        margin: 5px;
+        padding: 20px;
+        box-sizing: border-box;
       }
+
       #box-4 {
         flex: 1;
-        background-color: rgb(108, 59, 213);
+        background-color: rgb(14, 69, 118);
+        margin: 5px;
       }
-      /* Style for consistent input fields */
-      form input[type="text"],
-      form input[type="email"],
-      form input[type="password"],
-      form input[type="color"],
-      form select {
-        width: 80%;
-        padding: 1px;
-        margin: 2px 0;
-        font-size: 12px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+
+      form {
+        width: 100%;
       }
-      form button {
-        padding: 2px 5px;
-        font-size: 15px;
-        cursor: pointer;
-        background-color: #4CAF50;
+
+      .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .form-group label {
+        width: 200px;
+        font-weight: bold;
+      }
+
+      .form-group input,
+      .form-group select {
+        flex: 1;
+        padding: 5px;
+      }
+
+      #checkBtn {
+        margin-top: 10px;
+        padding: 8px 20px;
+        font-size: 16px;
+        background-color: rgb(10, 123, 47);
         color: white;
         border: none;
-        border-radius: 3px;
+        border-radius: 5px;
+        cursor: pointer;
       }
-      form label {
-        font-size: 15px;
-        margin-bottom: 5px;
-        display: block;
+
+      #checkBtn:hover {
+        background-color: black;
+      }
+
+      /* Styling for the agreement section */
+      .agreement {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .agreement input[type="checkbox"] {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
       }
     </style>
   </head>
+
   <body>
-    <h1 style="text-align: center">Logo</h1>
-    <h1 style="text-align: center">Title</h1>
+    <h1 style="text-align: center">
+   <img src="aqi.jpg" alt="AQI Logo" width="200" height="100" />
+    </h1>
+    <h1 style="text-align: center">Air Quality Index</h1>
+
     <div class="container">
       <div class="column">
         <div id="box-1" class="box">
-          <table border="1", style="width: 100%; text-align: center; border-collapse: collapse;">
-            <thead>
-              <tr>
-                <th>Country</th>
-                <th>Weather </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Bangladesh</td>
-                <td>30°c</td>
-              </tr>
-              <tr>
-                <td>UK</td>
-                <td>15°c</td>
-              </tr>
-              <tr>
-                <td>USA</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Canada</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Finland</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td> </td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>City</th>
+                  <th>Weather</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>City1</td>
+                  <td>32°C</td>
+                </tr>
+                <tr>
+                  <td>City2</td>
+                  <td>23°C</td>
+                </tr>
+                <tr>
+                  <td>City3</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City4</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City5</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City6</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City7</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City8</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City9</td>
+                  <td>33°C</td>
+                </tr>
+                <tr>
+                  <td>City10</td>
+                  <td>33°C</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div id="box-2" class="box">Box-2</div>
       </div>
+
       <div class="column">
         <div id="box-3" class="box">
-          <form action="submit.php" method="POST">
-            <label>Full Name:</label>
-            <input type="text" placeholder="Full Name "fullName"><br>
-            <label>Email:</label>
-            <input type="email" placeholder="Enter email" id="email"><br>
-            <label>Password:</label>
-            <input type="password" id="password1" placeholder="Enter Password"> <br>
-            <label>Confirm Password </label>
-            <input type="password" id="password2" placeholder="Enter Password"><br>
-            
-            <label>Location:</label>
-            <input type="text" placeholder="Enter Location"><br>
-            <label>zip Code:</label>
-            <input type="text" placeholder="Enter zip Code"><br>
-            <label for="">Prefferd City:</label>
-            <select name="City" id="city">
-              <option value="Dhaka">Dhaka</option>
-              <option value="chattogram">chattogram</option>
-              <option value="Barisal">Barisal</option>
-              <option value="Rajshahi">Rajshahi</option>
-            </select><br>
-            <label for="">Choose Color: </label><input type="color" id="color"><br>
-            I agree to the Terms and Conditions</label> <input type="checkbox" ><br>
-            <button id="checkBtn">Submit</button>
+          <form action="">
+            <div class="form-group">
+              <label>Full Name:</label>
+              <input type="text" placeholder="FULL NAME" id="fullName" />
+            </div>
+            <div id="fullNameError" class="error-message"></div>
 
+            <div class="form-group">
+              <label>Email:</label>
+              <input type="email" placeholder="Enter email" id="email" />
+            </div>
+            <div id="emailError" class="error-message"></div>
+
+            <div class="form-group">
+              <label>Password:</label>
+              <input
+                type="password"
+                id="password1"
+                placeholder="Enter Password"
+              />
+            </div>
+            <div id="password1Error" class="error-message"></div>
+
+            <div class="form-group">
+              <label>Confirm Password:</label>
+              <input
+                type="password"
+                id="password2"
+                placeholder="Enter Password"
+              />
+            </div>
+            <div id="password2Error" class="error-message"></div>
+
+            <div class="form-group">
+              <label>Location:</label>
+              <input type="text" placeholder="Enter Location" />
+            </div>
+
+            <div class="form-group">
+              <label>Zip Code:</label>
+              <input type="text" placeholder="Enter Zip Code" id="zipCode" />
+            </div>
+            <div id="zipCodeError" class="error-message"></div>
+
+            <div class="form-group">
+              <label>Preferred City:</label>
+              <select name="City" id="city">
+                <option value="">--Choose a city--</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Chattogram">Chattogram</option>
+                <option value="Barisal">Barisal</option>
+                <option value="Rajshahi">Rajshahi</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Select Form Color:</label>
+              <input type="color" id="color" />
+            </div>
+
+            <div class="agreement">
+              I agree to the Terms and Conditions
+              <input type="checkbox" id="checkBox" />
+            </div>
+            <div id="checkBoxError" class="error-message"></div>
+
+            <button id="checkBtn">Submit</button>
           </form>
         </div>
+
         <div id="box-4" class="box">Box-4</div>
       </div>
     </div>
+
     <script src="script.js"></script>
-    <script>
-      document.getElementById("checkBtn").addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the default form submission
-        alert("Form submitted successfully!");
-        // Add your form validation or submission logic here
-      });
-    </script>
   </body>
 </html>
