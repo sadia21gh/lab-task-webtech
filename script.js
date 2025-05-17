@@ -7,6 +7,7 @@ document.getElementById("checkBtn").addEventListener("click", (event) => {
   const password1 = document.getElementById("password1").value;
   const password2 = document.getElementById("password2").value;
   const zip = document.getElementById("zipCode").value;
+  const dob = document.getElementById("dob").value;
   const checkBox = document.getElementById("checkBox");
 
   // Get error elements
@@ -15,6 +16,7 @@ document.getElementById("checkBtn").addEventListener("click", (event) => {
   const password1Error = document.getElementById("password1Error");
   const password2Error = document.getElementById("password2Error");
   const zipCodeError = document.getElementById("zipCodeError");
+  const dobError = document.getElementById("dobError");
   const checkBoxError = document.getElementById("checkBoxError");
 
   // Clear all errors
@@ -23,6 +25,7 @@ document.getElementById("checkBtn").addEventListener("click", (event) => {
   password1Error.textContent = "";
   password2Error.textContent = "";
   zipCodeError.textContent = "";
+  dobError.textContent = "";
   checkBoxError.textContent = "";
 
   // Validation
@@ -57,6 +60,24 @@ document.getElementById("checkBtn").addEventListener("click", (event) => {
 
   if (zip.length < 4) {
     zipCodeError.textContent = "Zip code must be at least 4 characters long.";
+    return;
+  }
+
+  if (!dob) {
+    dobError.textContent = "Date of Birth is required.";
+    return;
+  }
+
+  const dobDate = new Date(dob);
+  const today = new Date();
+  const age = today.getFullYear() - dobDate.getFullYear();
+  const monthDiff = today.getMonth() - dobDate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dobDate.getDate())) {
+    age--;
+  }
+
+  if (age < 18) {
+    dobError.textContent = "You must be at least 18 years old.";
     return;
   }
 
